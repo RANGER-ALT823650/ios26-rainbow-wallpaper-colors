@@ -57,13 +57,33 @@ python3 color_frequency.py path/to/album-cover.jpg --top 6 --save-map mapped-cov
 python3 color_frequency.py path/to/album-cover.jpg --sample-step 3
 ```
 
-## 输出示例
+## 示例
+
+下面用 Taylor Swift《Lover》专辑封面作为输入图片：
+
+![Lover 专辑封面](assets/lover-album-cover.jpg)
+
+运行命令：
+
+```bash
+python3 color_frequency.py /Users/mayifan/Downloads/IMG_4498.JPG
+```
+
+生成结果：
 
 ```text
- 1. #F4007A rgb(244, 0, 122) 18.42% (18420 px)
- 2. #22A2F9 rgb(34, 162, 249) 12.77% (12770 px)
- 3. #FEE600 rgb(254, 230, 0) 9.31% (9310 px)
+ 1. #FBD8B0 rgb(251, 216, 176) 52.91% (2116224 px)
+ 2. #6FBAF1 rgb(111, 186, 241) 17.34% (693515 px)
+ 3. #F789D2 rgb(247, 137, 210) 15.08% (603069 px)
 ```
+
+终端截图：
+
+![终端运行结果](assets/terminal-result.png)
+
+设置成 iOS 26 彩虹壁纸后的效果图：
+
+![iOS 26 彩虹壁纸效果图](assets/wallpaper-result.jpg)
 
 默认会在终端里显示颜色块。如果不想显示颜色块：
 
@@ -90,4 +110,3 @@ image                    输入图片路径
 调色板直接写在 `color_frequency.py` 的 `PALETTE_HEX` 中，一共有 75 个颜色。它们来自三张色卡截图里的圆形色块，取样时从每个圆形中心取色，并排除了背景色。
 
 如果是为了设置彩虹壁纸配色，建议先用 `--top 3` 或 `--top 6` 看主要颜色，再根据专辑氛围手动挑选，而不是完全只按最高频颜色决定。
-
